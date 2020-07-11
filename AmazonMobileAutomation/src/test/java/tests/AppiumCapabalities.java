@@ -8,16 +8,12 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.HttpCommandExecutor;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
@@ -66,12 +62,23 @@ public class AppiumCapabalities {
 	{
 		System.out.println("I have started running");
 	}
-	
 	@Test
 	public void searchData()
 	{
-	 AndroidElement enterValue =	appiumDriver.findElement(By.id("com.amazon.mShop.android.shopping:id/rs_search_src_text"));
+		AndroidElement skipSignIn = appiumDriver.findElement(By.id("com.amazon.mShop.android.shopping:id/skip_sign_in_button"));
+		if(skipSignIn.isDisplayed())
+		{
+			skipSignIn.click();
+		}
+		else
+		{
+			System.out.println("no in signpage");
+		}
+	  AndroidElement enterValue =	appiumDriver.findElement(By.id("com.amazon.mShop.android.shopping:id/rs_search_src_text"));
 	 enterValue.sendKeys("65 inch tv");
+	 appiumDriver.manage().timeouts().implicitlyWait(05, TimeUnit.SECONDS);
+	 AndroidElement dataEntered = appiumDriver.findElement(By.xpath("//[contains(text(), '64 inch tv')]"));
+	 dataEntered.click();
 	 
 	}
 	
