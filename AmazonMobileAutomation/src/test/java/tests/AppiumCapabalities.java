@@ -6,10 +6,6 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -26,12 +22,11 @@ import utils.ReadConfigProperty;
  * Created on 11-07=2020
  */
 public class AppiumCapabalities {   
-	AppiumDriver<AndroidElement> appiumDriver;
+	static AppiumDriver<AndroidElement> appiumDriver;
 	
-	 Properties property = null;
-		 
-	@BeforeTest
-	public void setup() throws IOException
+	 static Properties property = null;
+
+	public static DesiredCapabilities setup() throws IOException
 	{   
 		property = ReadConfigProperty.readConfigProperty("GlobalSettings.properties");
 	    String udid = property.getProperty("UDID");
@@ -61,25 +56,10 @@ public class AppiumCapabalities {
 		{
 			System.out.println(e.getMessage());
 		}
+		return dc;
 		
 				
 }  
-	
-	@Test
-	public void samplerun()
-	{
-		System.out.println("I have started running");
-	}
-	
-	
-	@AfterTest
-	public void tearDown () {
-	    if (appiumDriver != null) {
-	    	appiumDriver.closeApp();
-
-	    }
-	
-	}
 	
 	
 }

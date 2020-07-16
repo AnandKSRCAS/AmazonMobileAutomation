@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-11T23:00:51 IST" name="Default suite" finished-at="2020-07-11T23:01:19 IST" duration-ms="27846">
+  <suite started-at="2020-07-16T10:30:13 IST" name="Suite" finished-at="2020-07-16T10:30:29 IST" duration-ms="15796">
     <groups>
     </groups>
-    <test started-at="2020-07-11T23:00:51 IST" name="Default test" finished-at="2020-07-11T23:01:19 IST" duration-ms="27846">
-      <class name="tests.AppiumCapabalities">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.AppiumCapabalities@932bc4a]" started-at="2020-07-11T23:00:51 IST" name="setup" finished-at="2020-07-11T23:01:11 IST" duration-ms="19853" status="PASS">
+    <test started-at="2020-07-16T10:30:13 IST" name="Test" finished-at="2020-07-16T10:30:29 IST" duration-ms="15796">
+      <class name="tests.HomePage">
+        <test-method is-config="true" signature="startAppium()[pri:0, instance:tests.HomePage@4e268090]" started-at="2020-07-16T10:30:13 IST" name="startAppium" finished-at="2020-07-16T10:30:29 IST" duration-ms="15698" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="samplerun()[pri:0, instance:tests.AppiumCapabalities@932bc4a]" started-at="2020-07-11T23:01:11 IST" name="samplerun" finished-at="2020-07-11T23:01:11 IST" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- samplerun -->
-        <test-method signature="searchData()[pri:0, instance:tests.AppiumCapabalities@932bc4a]" started-at="2020-07-11T23:01:11 IST" name="searchData" finished-at="2020-07-11T23:01:19 IST" duration-ms="7512" status="FAIL">
+        </test-method> <!-- startAppium -->
+        <test-method signature="searchData()[pri:0, instance:tests.HomePage@4e268090]" started-at="2020-07-16T10:30:29 IST" name="searchData" finished-at="2020-07-16T10:30:29 IST" duration-ms="15" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
-at io.appium.java_client.TouchAction.<init>(TouchAction.java:52)
-at tests.AppiumCapabalities.searchData(AppiumCapabalities.java:96)
+at tests.HomePage.searchData(HomePage.java:32)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -56,11 +50,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AppiumCapabalities@932bc4a]" started-at="2020-07-11T23:01:19 IST" name="tearDown" finished-at="2020-07-11T23:01:19 IST" duration-ms="361" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.HomePage@4e268090]" started-at="2020-07-16T10:30:29 IST" name="tearDown" finished-at="2020-07-16T10:30:29 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.AppiumCapabalities -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- tests.HomePage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -3,7 +3,6 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="tests.AppiumCapabalities"/>
       <class name="tests.HomePage"/>
     </classes>
   </test> <!-- Test -->
